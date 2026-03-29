@@ -1,5 +1,5 @@
 # jbook
-one self-powerd notebook , and once push ,pages finish soon
+one self-powerd notebook , and once push ,pages finish soon autoly.
 
 # 快速开始吧
 ## github page
@@ -65,5 +65,7 @@ one self-powerd notebook , and once push ,pages finish soon
 
 我确实使用了ai 进行完善，致敬伟大的gpt5.4，帮助我完成了最关键的一步，就是同时兼容github page 和   cloudfare pages 的显示。
 
-# 期待
+# 期待后续的精彩
+
+如果喜欢，请给我一个星星。
 
