@@ -4,6 +4,12 @@
 
 它基于 `Jekyll + Markdown + GitHub Pages`，同时兼容 `Cloudflare Pages`。平时只需要在 `thoughts/` 里写 Markdown，构建脚本会自动生成 `_posts`，并提供移动端优先的 PWA 外观。
 
+## 中文教程
+
+如果你更希望按图一步一步配置，而不是只看简版说明，先看这份手把手教程：
+
+[手把手中文教程](docs/hand-to-hand-cn.md)
+
 ## 特性
 
 - 只写普通 Markdown，不用手写 `_posts/YYYY-MM-DD-title.md`
