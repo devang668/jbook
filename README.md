@@ -4,6 +4,7 @@ one self-powerd notebook , and once push ,pages finish soon autoly.
 # 快速开始吧
 ## github page
 
+<img width="2013" height="852" alt="image" src="https://github.com/user-attachments/assets/039633e7-f99e-4a94-ab2b-568fae07091f" />
 
 
 上传之后，在设置中只要点击选择红色圈中的那个就好了。
