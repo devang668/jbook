@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {% assign meta_title = page.title | default: site.title %}
+  {% if page.url == '/' %}
+    {% assign meta_title = site.title %}
+  {% else %}
+    {% assign meta_title = page.title | append: ' · ' | append: site.title %}
+  {% endif %}
+  {% assign meta_description = page.excerpt | default: site.description | strip_html | strip_newlines | strip | truncate: 120 %}
+  <title>{{ meta_title }}</title>
+  <meta name="description" content="{{ meta_description }}">
+  <meta name="theme-color" content="#ea6a2a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+  <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/icons/app-icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+  <script defer src="{{ '/assets/app.js' | relative_url }}"></script>
+</head>
+<body>
+  {% assign repo_url = site.github.repository_url | default: '' %}
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-row">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
+          <span class="brand-mark">1</span>
+          <span class="brand-copy">
+            <strong>{{ site.title }}</strong>
+            <small>{{ site.description }}</small>
+          </span>
+        </a>
+        <button class="install-button" type="button" hidden>安装 App</button>
+      </div>
+
+      <nav class="quick-nav" aria-label="主导航">
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="is-active"{% endif %}>首页</a>
+        <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="is-active"{% endif %}>关于</a>
+        <a href="{{ repo_url }}" target="_blank" rel="noreferrer">仓库</a>
+      </nav>
+    </header>
+
+    <main class="main-panel">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>{{ site.title }} 是一个可安装的轻博客模板，适合快速发布日常笔记。</p>
+      <p>
+        <a href="{{ '/about' | relative_url }}">关于</a>
+        <span class="footer-sep">·</span>
+        <a href="{{ repo_url }}" target="_blank" rel="noreferrer">仓库</a>
+      </p>
+    </footer>
+  </div>
+
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="is-active"{% endif %}>
+      <span>首页</span>
+    </a>
+    <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="is-active"{% endif %}>
+      <span>关于</span>
+    </a>
+    <a href="{{ repo_url }}" target="_blank" rel="noreferrer">
+      <span>仓库</span>
+    </a>
+  </nav>
+</body>
+</html>

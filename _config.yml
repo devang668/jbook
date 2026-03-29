@@ -1,0 +1,24 @@
+title: JBook
+description: 一个移动端优先的轻博客模板
+lang: zh-CN
+theme: minima
+markdown: kramdown
+url: https://devang668.github.io
+baseurl: /jbook
+kramdown:
+  input: GFM
+  hard_wrap: false
+future: true
+show_drafts: false
+permalink: /:title/
+
+github:
+  repository_url: https://github.com/devang668/jbook
+
+exclude:
+  - thoughts
+  - scripts
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock

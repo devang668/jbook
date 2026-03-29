@@ -1,76 +1,67 @@
-# jbook
-one self-powerd notebook , and once push ,pages finish soon autoly.
+# JBook
 
-# 快速开始吧
-## github page
+一个可公开分享的轻博客模板。
 
-<img width="2013" height="852" alt="image" src="https://github.com/user-attachments/assets/039633e7-f99e-4a94-ab2b-568fae07091f" />
+它基于 `Jekyll + Markdown + GitHub Pages`，同时兼容 `Cloudflare Pages`。平时只需要在 `thoughts/` 里写 Markdown，构建脚本会自动生成 `_posts`，并提供移动端优先的 PWA 外观。
 
+## 特性
 
-上传之后，在设置中只要点击选择红色圈中的那个就好了。
+- 只写普通 Markdown，不用手写 `_posts/YYYY-MM-DD-title.md`
+- 自动根据文件名或 git 历史推断发布日期
+- GitHub Pages 自动部署
+- Cloudflare Pages 兼容配置
+- PWA 安装、离线缓存、移动端优化布局
 
+## 写作方式
 
+1. 在 `thoughts/` 里新建一个 `.md` 文件。
+2. 第一行写标题。
+3. 空一行后直接写正文。
+4. 提交并推送，站点会自动更新。
 
-## claudfare page
-最好绑定一个个人的域名
+示例：
 
-<img width="1782" height="711" alt="image" src="https://github.com/user-attachments/assets/83ba8f18-c2be-4cd3-8653-3407586a240d" />
+```md
+今天的小想法
 
+这里直接写正文。
+想贴链接、图片、代码块都可以。
+```
 
-然后
+## GitHub Pages
 
-<img width="1209" height="577" alt="image" src="https://github.com/user-attachments/assets/a9cf399a-7300-4de2-abe0-97e77cdd396e" />
+仓库推送到 `main` 后，进入 GitHub 仓库：
 
-看，选这里
-<img width="1430" height="450" alt="image" src="https://github.com/user-attachments/assets/7c4cd322-2851-41cb-9dd0-e6db0c91d4e5" />
+`Settings > Pages > Source > GitHub Actions`
 
-接着关联自己的仓库和cloudfare ，并且找到仓库的位置
+项目页默认地址通常是：
 
-<img width="1277" height="663" alt="image" src="https://github.com/user-attachments/assets/14fe6d01-cd3c-474a-82df-223191336589" />
+`https://<owner>.github.io/jbook/`
 
-然后，看图操作
-<img width="1357" height="829" alt="image" src="https://github.com/user-attachments/assets/77b9f120-40ab-4d83-b23e-281121945bce" />
+如果你把仓库名改掉了，记得同步修改 [`_config.yml`](_config.yml) 里的 `baseurl`。
 
+## Cloudflare Pages
 
-构建命令这里看下方的
+如果你打算绑定自己的域名或使用 Cloudflare Pages，请使用下面这组配置：
 
-` python scripts/generate_posts.py && bundle exec jekyll build --config _config.yml,_config.cloudflare.yml
-`
-完后如此
+- Production branch: `main`
+- Framework preset: `Jekyll` 或 `None`
+- Build command: `python scripts/generate_posts.py && bundle exec jekyll build --config _config.yml,_config.cloudflare.yml`
+- Build output directory: `_site`
 
-<img width="1020" height="199" alt="image" src="https://github.com/user-attachments/assets/faaeeb07-3585-4585-8c7b-e77fce71acde" />
+这样 GitHub Pages 仍然走仓库路径，Cloudflare Pages 则会走根路径。
 
-点击继续 看见构建 完成
+## 需要改的配置
 
-<img width="1401" height="688" alt="image" src="https://github.com/user-attachments/assets/21adb15e-14ec-4ac9-8fe6-b0979cb8a245" />
-再继续
+在开始正式写作前，建议先改这几个字段：
 
-有域名1就点击1 ，没有后边也可以补充。点击继续。
+- [`_config.yml`](_config.yml) 里的 `title`
+- [`_config.yml`](_config.yml) 里的 `description`
+- [`_config.yml`](_config.yml) 里的 `url` / `baseurl`
+- [`_config.yml`](_config.yml) 里的 `github.repository_url`
+- [`_config.cloudflare.yml`](_config.cloudflare.yml) 里的 `url`
 
-<img width="1356" height="802" alt="image" src="https://github.com/user-attachments/assets/8404d328-03e4-4df6-a414-76ec068fa464" />
+## 许可
 
-会看到
-
-<img width="1470" height="571" alt="image" src="https://github.com/user-attachments/assets/34cc72d4-3886-4dd2-9a56-0bc728029aa6" />
-
-点击生产右边的那个链接，就会看到。
-<img width="1389" height="774" alt="image" src="https://github.com/user-attachments/assets/46b7fd1b-5565-452b-a16a-0d1d3905274a" />
-
-好了你的网站已经上线。
-
-因为部分地区网路的限制，你可能需要一个域名，绑定域名以后，就可以在pages那里找到这个项目，点击自定义域，那样可以自己设一个。比如你的域名是 devsan.fun 博客就可以是 blog.devsan.fun
-
-注意，如果只是自用， 一定看看域名的续费价格，不要只看1块钱就买，你会发现第二年续费超级离谱。
-
-# 为什么有这样的一个项目
-
-我深切的感受到，中心化平台有着极高的权力（比如对你进行管理和限流，甚至封禁你的账号），还有权利（包括不限于在你的内容里插入广告，，但是给你不到10%的分红，甚至分币不出）
-
-所以做了一个这样的博客站点，大家下载他，然后改个名字，即可自己新建一个个人的博客，如果处于网路受限制的地区，请自己把网站托管到 cloudfare pages
-
-我确实使用了ai 进行完善，致敬伟大的gpt5.4，帮助我完成了最关键的一步，就是同时兼容github page 和   cloudfare pages 的显示。
-
-# 期待后续的精彩
-
-如果喜欢，请给我一个星星。
+默认附带 [MIT License](LICENSE)。
 
