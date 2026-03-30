@@ -1,5 +1,21 @@
 # JBook
 
+
+快速看见效果 https://devang668.github.io/jbook/
+
+<img width="1888" height="1234" alt="image" src="https://github.com/user-attachments/assets/e39d0ca5-ca0c-49b1-9df1-b47052857eb8" />
+
+部署需要花费时间？5分钟左右。
+
+fork 
+
+然后只需要设置的pages里设为开放（其实默认就是开放的，不用设置），然后settings/pages 勾选.
+<img width="2062" height="993" alt="image" src="https://github.com/user-attachments/assets/455536bf-be40-4745-be6c-4634b8329041" />
+
+
+
+这是啥呢？
+---------------------
 一个可公开分享的轻博客模板。
 
 它基于 `Jekyll + Markdown + GitHub Pages`，同时兼容 `Cloudflare Pages`。平时只需要在 `thoughts/` 里写 Markdown，构建脚本会自动生成 `_posts`，并提供移动端优先的 PWA 外观。
